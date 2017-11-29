@@ -1,0 +1,44 @@
+#calculator {
+  display: inline-block;
+}
+
+.button {
+  padding: 0;
+}
+
+.normalKey {
+  width: 5em;
+  height: 5em;
+  display: inline-block;
+}
+
+.longKey {
+  width: 5em;
+  height: 10em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.horizLongKey {
+  width: 10em;
+  height: 5em;
+  display: inline-block;
+}
+
+.calcRow {
+  font-size: 0;
+}
+
+.calcTwoRows {
+  font-size: 0;
+}
+.calcContainer {
+  display: inline-block;
+}
+
+#workingBox {
+  width: 100%;
+  border-color: black;
+  height: 2em;
+  border-style: solid;
+}
