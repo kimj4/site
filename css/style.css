@@ -1,5 +1,26 @@
+body {
+  text-align: center;
+}
+#main {
+  margin-top: 3em;
+  /*margin: auto;*/
+  /*width: 50%;*/
+  /*display: inline-block;*/
+  /*display: block;*/
+}
+
 #calculator {
   display: inline-block;
+}
+
+#resultsBox {
+  /*display: inline-block;*/
+  /*float:left;*/
+}
+
+p {
+  /*display: inline-block;*/
+  /*float: left;*/
 }
 
 .button {

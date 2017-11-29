@@ -1,15 +1,4 @@
-// function refresh()
-// {
-//     var req = new XMLHttpRequest();
-//     console.log("Grabbing Value");
-//     req.onreadystatechange=function() {
-//       if (req.readyState==4 && req.status==200) {
-//         document.getElementById('trulyCodesFavouriteNumber').innerText = req.responseText;
-//       }
-//     }
-//     req.open("GET", 'reload.txt', true);
-//     req.send(null);
-// }
+var justAnswered = false;
 function init()
 {
   getGlobalState();
@@ -40,6 +29,10 @@ function init()
   callback function for all the keys on the calculator
 */
 function calcKeyPressed() {
+  if (justAnswered) {
+      document.getElementById("workingBox").value = "";
+      justAnswered = false;
+  }
   document.getElementById("workingBox").style.borderColor = "black";
   if (this.id == "c") {
     document.getElementById("workingBox").value = "";
@@ -64,8 +57,9 @@ function calculate(functionString) {
       updateGlobalState(functionString + '=' + answer);
       // document.getElementById("resultsBox").innerHTML += "<p>" + answer + "<\p>";
       console.log(answer);
+      justAnswered = true;
     } catch(e) {
-      console.log(e);
+      // console.log(e);
       document.getElementById("workingBox").style.borderColor = "red";
     }
   } else {
@@ -108,7 +102,7 @@ function updateGlobalState(answerString) {
   };
   req.onreadystatechange=function() {
     if (req.readyState==4 && req.status==200) {
-      console.log(req.responseText)
+      // console.log(req.responseText)
       // document.getElementById('trulyCodesFavouriteNumber').innerText = req.responseText;
       getGlobalState();
     }
@@ -141,10 +135,12 @@ function updateHistoryDisplay(historyList) {
 
   box = document.getElementById("resultsBox");
   newContent = '';
-  for (i = 0; i < historyList.length; i++) {
+  for (i = 0; i < Math.min(historyList.length, 10); i++) {
     newContent += '<p>' + historyList[i].value + '</p>';
   }
-  box.innerHTML = newContent;
+  if (box.innerHTML != newContent) {
+    box.innerHTML = newContent;
+  }
 }
 
 function getGlobalState() {
@@ -156,7 +152,7 @@ function getGlobalState() {
       resp = JSON.parse(req.response).Items[0].hist.L;
       parsedHistory = parseHistory(resp);
       updateHistoryDisplay(parsedHistory);
-      console.log(parseHistory(resp));
+      // console.log(parseHistory(resp));
     }
   }
   req.send();
