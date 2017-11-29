@@ -12,8 +12,10 @@
 // }
 function init()
 {
+  getGlobalState();
+
   // refresh()
-  // var int=self.setInterval(function(){refresh()},1000);
+  var int=self.setInterval(function(){getGlobalState()},1000);
   document.getElementById("0").addEventListener("click", calcKeyPressed)
   document.getElementById("1").addEventListener("click", calcKeyPressed)
   document.getElementById("2").addEventListener("click", calcKeyPressed)
@@ -59,7 +61,7 @@ function calculate(functionString) {
     try {
       answer = eval(functionString)
       document.getElementById("workingBox").value = answer;
-      updateGlobalState(answer);
+      updateGlobalState(functionString + '=' + answer);
       // document.getElementById("resultsBox").innerHTML += "<p>" + answer + "<\p>";
       console.log(answer);
     } catch(e) {
@@ -78,12 +80,83 @@ function calculate(functionString) {
 */
 function updateGlobalState(answerString) {
   var req = new XMLHttpRequest();
-  req.open("POST", "https://72eoaoqwvb.execute-api.us-east-2.amazonaws.com/a/");
+  req.open("PUT", "https://72eoaoqwvb.execute-api.us-east-2.amazonaws.com/a/");
   req.setRequestHeader("Content-type", "application/json");
+
+
+  today = new Date();
+  data = {
+     "Key": {
+        "id" : {
+           "S": "history"
+        }
+     },
+     "TableName": "sezzle",
+     "ExpressionAttributeValues": {
+        ":vals" : {
+           "L": [
+              {"M": {
+                "timestamp": {"S": today.toISOString()},
+                "value": {"S": answerString}
+                }
+              }
+           ]
+        }
+     },
+     "UpdateExpression": "SET hist = list_append(hist, :vals)",
+     "ReturnValues": "ALL_NEW"
+  };
   req.onreadystatechange=function() {
     if (req.readyState==4 && req.status==200) {
       console.log(req.responseText)
       // document.getElementById('trulyCodesFavouriteNumber').innerText = req.responseText;
+      getGlobalState();
+    }
+  }
+  req.send(JSON.stringify(data))
+}
+
+function parseHistory(history) {
+  // input is the history result
+  returnHist = [];
+  for (i = 0; i < history.length; i++) {
+    item = {"timestamp": history[i].M.timestamp.S,
+            "value": history[i].M.value.S};
+    returnHist.push(item);
+  }
+  return returnHist;
+}
+
+function updateHistoryDisplay(historyList) {
+  // TODO: sort items by timestamp
+  historyList = historyList.sort(function(a, b) {
+    aDate = new Date(a.timestamp);
+    bDate = new Date(b.timestamp);
+    if (aDate > bDate) {
+      return -1;
+    } else {
+      return 1;
+    }
+  })
+
+  box = document.getElementById("resultsBox");
+  newContent = '';
+  for (i = 0; i < historyList.length; i++) {
+    newContent += '<p>' + historyList[i].value + '</p>';
+  }
+  box.innerHTML = newContent;
+}
+
+function getGlobalState() {
+  var req = new XMLHttpRequest();
+  req.open("POST", "https://72eoaoqwvb.execute-api.us-east-2.amazonaws.com/a/");
+  req.setRequestHeader("Content-type", "application/json");
+  req.onreadystatechange=function() {
+    if (req.readyState==4 && req.status==200) {
+      resp = JSON.parse(req.response).Items[0].hist.L;
+      parsedHistory = parseHistory(resp);
+      updateHistoryDisplay(parsedHistory);
+      console.log(parseHistory(resp));
     }
   }
   req.send();
