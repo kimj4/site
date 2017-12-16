@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+		<link rel = "stylesheet"
+   type = "text/css"
+   href = "css/style.css" />
+	</head>
+<body onload="init()">
+	<button onclick="window.history.back()">Back to portfolio</button>
+	<div id="main">
+			<h1>Ju Yun Kim's Calculator</h1>
+			<div id="calculator">
+				<input type="text" id="workingBox">
+				<div class="calcRow" id="topRow">
+					<button type="button" class="normalKey" id="c">Clear</button>
+					<button type="button" class="normalKey" id="divide">/</button>
+					<button type="button" class="normalKey" id="multiply">*</button>
+					<button type="button" class="normalKey" id="subtract">-</button>
+				</div>
+				<div class="calcTwoRows">
+					<div class="calcContainer" id="sevenFourRows">
+						<div class="calcRow" id="sevenRow">
+							<button type="button" class="normalKey" id="7">7</button>
+							<button type="button" class="normalKey" id="8">8</button>
+							<button type="button" class="normalKey" id="9">9</button>
+						</div>
+						<div class="calcRow" id="fourRow">
+							<button type="button" class="normalKey" id="4">4</button>
+							<button type="button" class="normalKey" id="5">5</button>
+							<button type="button" class="normalKey" id="6">6</button>
+						</div>
+					</div>
+					<button type="button" class="longKey" id="add">+</button>
+
+				</div>
+				<div class="calcTwoRows">
+					<div class="calcContainer" id="oneZeroRows">
+						<div class="calcRow" id="oneRow">
+							<button type="button" class="normalKey" id="1">1</button>
+							<button type="button" class="normalKey" id="2">2</button>
+							<button type="button" class="normalKey" id="3">3</button>
+						</div>
+						<div class="calcRow" id="zeroRow">
+							<button type="button" class="horizLongKey" id="0">0</button>
+							<button type="button" class="normalKey" id="dot">.</button>
+						</div>
+					</div>
+					<button type="button" class="longKey" id="enter">Enter</button>
+				</div>
+
+			</div>
+			<div id="resultsBox">
+
+			</div>
+		</div>
+	<script src="js/calculator.js"></script>
+</body>
+</html>

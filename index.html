@@ -3,55 +3,191 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
 		<link rel = "stylesheet"
    type = "text/css"
-   href = "css/style.css" />
+   href = "css/index.css" />
 	</head>
-<body onload="init()">
-	<div id="main">
-			<h1>Ju Yun Kim's Calculator</h1>
-			<div id="calculator">
-				<input type="text" id="workingBox">
-				<div class="calcRow" id="topRow">
-					<button type="button" class="normalKey" id="c">Clear</button>
-					<button type="button" class="normalKey" id="divide">/</button>
-					<button type="button" class="normalKey" id="multiply">*</button>
-					<button type="button" class="normalKey" id="subtract">-</button>
-				</div>
-				<div class="calcTwoRows">
-					<div class="calcContainer" id="sevenFourRows">
-						<div class="calcRow" id="sevenRow">
-							<button type="button" class="normalKey" id="7">7</button>
-							<button type="button" class="normalKey" id="8">8</button>
-							<button type="button" class="normalKey" id="9">9</button>
-						</div>
-						<div class="calcRow" id="fourRow">
-							<button type="button" class="normalKey" id="4">4</button>
-							<button type="button" class="normalKey" id="5">5</button>
-							<button type="button" class="normalKey" id="6">6</button>
-						</div>
-					</div>
-					<button type="button" class="longKey" id="add">+</button>
-
-				</div>
-				<div class="calcTwoRows">
-					<div class="calcContainer" id="oneZeroRows">
-						<div class="calcRow" id="oneRow">
-							<button type="button" class="normalKey" id="1">1</button>
-							<button type="button" class="normalKey" id="2">2</button>
-							<button type="button" class="normalKey" id="3">3</button>
-						</div>
-						<div class="calcRow" id="zeroRow">
-							<button type="button" class="horizLongKey" id="0">0</button>
-							<button type="button" class="normalKey" id="dot">.</button>
-						</div>
-					</div>
-					<button type="button" class="longKey" id="enter">Enter</button>
-				</div>
-
-			</div>
-			<div id="resultsBox">
-
-			</div>
+<body>
+	<H1>Ju Yun Kim</H1>
+	<nav>
+		<li>
+			<a href="calculator.html">check out my calculator!</a>
+		</li>
+		<li>
+			<a href="keyboards.html">keyboards</a>
+		</li>
+	</nav>
+	<h2>introduction</h2>
+	<p>
+		I am a developer, computer and keyboard enthusiast
+	</p>
+	<h2>Education</h2>
+	<p>
+		Carleton College, Computer Science, Class of 2018 <br />
+	</p>
+	<div>
+		<h3>Relevant classes</h3>
+		<li>Data Structures</li>
+		<li>Algorithms</li>
+		<li>Math of Computer Science</li>
+		<li>Audio Programming</li>
+		<li>Computer Organization and Architecture</li>
+		<li>Software Design</li>
+		<li>Database Systems</li>
+		<li>Programming Languages: Design and Implementation</li>
+		<li>Computer Graphics</li>
+		<li>Computability and Complexity</li>
+		<li>Evolutionary Computing and Artificial Life</li>
+		<li>Operating Systems</li>
+		<li>Natural Language Processing</li>
+		<li>Artificial Intelligence</li>
+	</div>
+	<div>
+		<h3>Senior Capstone Project</h3>
+		<p>
+			E-discovery is the process of finding electronic documents that may be
+			relevant in a court case. This often takes long hours by a legal team, which
+			makes it expensive and prone to error. I am working in a group of six to
+			develop a machine learning system to aid in its automation.
+		</p>
+		<p>
+			We are working with the Enron emails dataset, which is the industry
+			standard, and are using TF-IDF along with LSA to turn these documents into
+			a matrix of numbers that represent their relatedness.
+		</p>
+		<p>
+			This matrix is then used to train a random forest algorithm that's being
+			implemented from scratch. This system can then take batches of emails, and
+			assign a strength of relevancy. Because of the possibly very high stakes,
+			we run these documents by a trained professional, who will decide if the
+			returned document is actually relevant. This decision is fed back into the
+			system to be used as additional training data.
+		</p>
+		<p>
+			This incremental learning is the part of the project that I am specializing
+			in. The random forest is incrementally trained by deleting and recreating
+			some number of trees, and updating the leave nodes of all others.
+		</p>
+	</div>
+	<div>
+		<h2>Work Experiences</h2>
+		<div>
+			<h3>Full Stack Application Developer, Launch5 Media and Technology, Northfield, MN, Summer 2017</h3>
+			<li>
+				Worked solo under the CEO's directions to create a prototype of a new social media app that emphasizes local connections.
+			</li>
+			<li>
+				Made the decision on the optimal tech stack for rapid prototyping
+			</li>
+			<li>
+				Backend data storage, authentication, and syncing implemented through AWS DynamoDB, API Gateway, Cognito
+			</li>
+			<li>
+				Frontend for Android, iOS, Windows platforms developed with HTML, CSS, Javascript using Apache Cordova
+			</li>
 		</div>
-	<script src="js/index.js"></script>
+		<div>
+			<h3>Engineering Intern, Lotic Labs, Chicago, IL, Summer 2016</h3>
+			<li>
+				Worked with CTO and one other intern to set up the data collection
+				foundations for the young company
+			</li>
+			<li>
+				Wrote a Python-based pipeline that scrapes, processes, and stores
+				data made available by USGS and other agencies.
+			</li>
+			<li>
+				Deployed the pipeline onto AWS Lambda and allowed asynchronous
+				processing to maximize use of bandwidth.
+			</li>
+		</div>
+		<div>
+			<h3>Drop Off Center Windows Lead Tech, Carleton College Information Technology Services, March 2016 - Current</h3>
+			<li>
+				Perform software and hardware repairs on machines of all operating systems
+			</li>
+			<li>
+				Keep up to date on Windows quirks, features, and bugs
+			</li>
+			<li>
+				Perfom particularly difficult repairs on Windows and Linux machines
+			</li>
+		</div>
+		<div>
+			<h3>Helpdesk Respondent, Carleton College Information Technology Services, September 2015 - Current</h3>
+			<li>
+				Walk through troubleshooting steps with students, faculty, and staff of
+				varying expertise
+			</li>
+			<li>
+				Make serivce calls to difficult or ambiguous issues
+			</li>
+			<li>
+				Maintain computers and printers in public spaces around the campus
+			</li>
+		</div>
+	</div>
+	<div>
+		<h2>Projects</h2>
+		<div>
+			<h3>CheckMeet</h3>
+			<p>
+				This is the work I did for Launch5 Media in the summer of 2017. The goal
+				was to create a social media app that would allow users to check into
+				places much like in Facebook, but allow them to come back to those
+				check-ins to see what others said about that place at a certain time.
+			</p>
+		</div>
+		<div>
+			<h3>NestTimer</h3>
+			<p>
+				This is a personal project that came from necessity. Sometimes, when I
+				have unstructured free time, and tasks that need to be done, but don't
+				have a set deadline, I can get lax with them. So I wanted an easy way
+				set a certain number of hours that I might allocate to a certain task,
+				and allocate some chunk of that time into subtasks that might go into
+				accomplishing that. What I ended up with is a timer that can have
+				nested timers that then contribute to their parents.
+			</p>
+			<p>
+				This project is developed in native Android in Android Studio and is not
+				yet released.
+			</p>
+		</div>
+		<div>
+			<h3>Untitled Android Game</h3>
+			<p>
+				After taking Computer Graphics, I wanted to venture into the world of
+				creating games, and this was my first attempt. This is a simple
+				single-gesture avoid-the-obstacle game that involved symmetrical motion
+				of two balls.
+			</p>
+			<p>
+				This game is developed in Corona Studio, which takes care of a lot of
+				the details involved in making a native app.
+			</p>
+			<img src="splitGamePreview.gif" />
+		</div>
+		<div>
+			<h3>Reselling Business</h3>
+			<p>
+				To make a little bit of money on the side, I got into reselling items
+				that are pertinent to my hobbies. In the beginning of the year, it was
+				computer parts, and now it is custom mechanical keyboards. Working just
+				part time, I've moved about 50 items this year which I bought for around
+				$5000 total. I sold all of these for a total of around $8500 with
+				profits after shipping and platform fees at around $2700.
+			</p>
+		</div>
+		<div>
+			<h3>Trading Cryptocurrency</h3>
+			<p>
+				From my computer hobby, I ended up with a fairly beefy computer, and I
+				didn't like seeing the parts go to waste, so I started mining Ethereum
+				when it was around $10. I've sold a couple at those low prices, but I
+				held on to about six, which grew astronomically when the cryptocurrency
+				craze of 2017 kicked in. I sold off for a virtually infinite profit margin
+				and and have been trading some of the earning at the right opportunities.
+			</p>
+		</div>
+	</div>
 </body>
 </html>
