@@ -1,0 +1,36 @@
+/* pinkish: f4989c
+   yellowish: ebd2b4
+   whiteish: f2f4f3
+   blueish: a1c6ea
+   greenish: acecf7*/
+
+html {
+  margin: auto;
+  display: table;
+}
+
+body {
+  width: 60%;
+  vertical-align: middle;
+  display: table-cell;
+  /* text-align: center; */
+  /* background-color: #a1c6ea; */
+}
+
+
+
+#header {
+  margin: auto;
+  text-align: center;
+  /* background-color: #ebd2b4; */
+}
+
+.navlist {
+  display: inline;
+}
+
+.content {
+  margin: auto;
+  width: 60%;
+  /* text-align: center; */
+}

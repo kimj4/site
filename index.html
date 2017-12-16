@@ -6,68 +6,72 @@
    href = "css/index.css" />
 	</head>
 <body>
-	<H1>Ju Yun Kim</H1>
-	<nav>
-		<li>
-			<a href="calculator.html">check out my calculator!</a>
-		</li>
-		<li>
-			<a href="keyboards.html">keyboards</a>
-		</li>
-	</nav>
-	<h2>introduction</h2>
-	<p>
-		I am a developer, computer and keyboard enthusiast
-	</p>
-	<h2>Education</h2>
-	<p>
-		Carleton College, Computer Science, Class of 2018 <br />
-	</p>
-	<div>
-		<h3>Relevant classes</h3>
-		<li>Data Structures</li>
-		<li>Algorithms</li>
-		<li>Math of Computer Science</li>
-		<li>Audio Programming</li>
-		<li>Computer Organization and Architecture</li>
-		<li>Software Design</li>
-		<li>Database Systems</li>
-		<li>Programming Languages: Design and Implementation</li>
-		<li>Computer Graphics</li>
-		<li>Computability and Complexity</li>
-		<li>Evolutionary Computing and Artificial Life</li>
-		<li>Operating Systems</li>
-		<li>Natural Language Processing</li>
-		<li>Artificial Intelligence</li>
+	<div id="header">
+		<H1>Ju Yun Kim</H1>
+		<p>
+			developer, entrepreneur, enthusiast
+		</p>
+		<nav>
+			<li class="navlist">
+				<a href="calculator.html">check out my calculator!</a>
+			</li>
+			<li class="navlist">
+				<a href="keyboards.html">keyboards</a>
+			</li>
+		</nav>
 	</div>
-	<div>
-		<h3>Senior Capstone Project</h3>
+	<div id="education" class="content">
+		<h2>Education</h2>
 		<p>
-			E-discovery is the process of finding electronic documents that may be
-			relevant in a court case. This often takes long hours by a legal team, which
-			makes it expensive and prone to error. I am working in a group of six to
-			develop a machine learning system to aid in its automation.
+			Carleton College, Computer Science, Class of 2018 <br />
 		</p>
-		<p>
-			We are working with the Enron emails dataset, which is the industry
-			standard, and are using TF-IDF along with LSA to turn these documents into
-			a matrix of numbers that represent their relatedness.
-		</p>
-		<p>
-			This matrix is then used to train a random forest algorithm that's being
-			implemented from scratch. This system can then take batches of emails, and
-			assign a strength of relevancy. Because of the possibly very high stakes,
-			we run these documents by a trained professional, who will decide if the
-			returned document is actually relevant. This decision is fed back into the
-			system to be used as additional training data.
-		</p>
-		<p>
-			This incremental learning is the part of the project that I am specializing
-			in. The random forest is incrementally trained by deleting and recreating
-			some number of trees, and updating the leave nodes of all others.
-		</p>
+		<div>
+			<h3>Relevant classes</h3>
+			<li>Data Structures</li>
+			<li>Algorithms</li>
+			<li>Math of Computer Science</li>
+			<li>Audio Programming</li>
+			<li>Computer Organization and Architecture</li>
+			<li>Software Design</li>
+			<li>Database Systems</li>
+			<li>Programming Languages: Design and Implementation</li>
+			<li>Computer Graphics</li>
+			<li>Computability and Complexity</li>
+			<li>Evolutionary Computing and Artificial Life</li>
+			<li>Operating Systems</li>
+			<li>Natural Language Processing</li>
+			<li>Artificial Intelligence</li>
+		</div>
+		<div>
+			<h3>Senior Capstone Project</h3>
+			<p>
+				E-discovery is the process of finding electronic documents that may be
+				relevant in a court case. This often takes long hours by a legal team, which
+				makes it expensive and prone to error. I am working in a group of six to
+				develop a machine learning system to aid in its automation.
+			</p>
+			<p>
+				We are working with the Enron emails dataset, which is the industry
+				standard, and are using TF-IDF along with LSA to turn these documents into
+				a matrix of numbers that represent their relatedness.
+			</p>
+			<p>
+				This matrix is then used to train a random forest algorithm that's being
+				implemented from scratch. This system can then take batches of emails, and
+				assign a strength of relevancy. Because of the possibly very high stakes,
+				we run these documents by a trained professional, who will decide if the
+				returned document is actually relevant. This decision is fed back into the
+				system to be used as additional training data.
+			</p>
+			<p>
+				This incremental learning is the part of the project that I am specializing
+				in. The random forest is incrementally trained by deleting and recreating
+				some number of trees, and updating the leave nodes of all others.
+			</p>
+		</div>
+
 	</div>
-	<div>
+	<div id="work" class="content">
 		<h2>Work Experiences</h2>
 		<div>
 			<h3>Full Stack Application Developer, Launch5 Media and Technology, Northfield, MN, Summer 2017</h3>
@@ -118,14 +122,14 @@
 				varying expertise
 			</li>
 			<li>
-				Make serivce calls to difficult or ambiguous issues
+				Make service calls to difficult or ambiguous issues
 			</li>
 			<li>
 				Maintain computers and printers in public spaces around the campus
 			</li>
 		</div>
 	</div>
-	<div>
+	<div id="projects" class="content">
 		<h2>Projects</h2>
 		<div>
 			<h3>CheckMeet</h3>
