@@ -9,6 +9,12 @@ body {
   /*display: block;*/
 }
 
+#description {
+  /* text-align: center; */
+  margin: auto;
+  width: 40%;
+}
+
 #calculator {
   display: inline-block;
 }

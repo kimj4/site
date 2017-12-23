@@ -17,7 +17,13 @@ body {
   /* background-color: #a1c6ea; */
 }
 
+div {
+  /* margin-left: 1em; */
+}
 
+#verticalContainer {
+  display: inline;
+}
 
 #header {
   margin: auto;
